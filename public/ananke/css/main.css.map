@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/Users/AJ/Documents/DevOps/AMosley-StaticSite",
+	"sourceRoot": "/home/ajmosley/ajmosley.com",
 	"sources": [
 		"ananke/css/main.css"
 	],
