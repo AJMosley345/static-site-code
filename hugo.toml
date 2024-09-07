@@ -1,4 +1,4 @@
 baseURL = 'https://ajmosley.com/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Anthony Mosley Jr. Portfolio'
 theme = 'ananke'
