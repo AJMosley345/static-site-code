@@ -1,0 +1,6 @@
+[book]
+authors = ["AJMosley345"]
+language = "en"
+multilingual = false
+src = "src"
+title = "AMosley Static Site"
