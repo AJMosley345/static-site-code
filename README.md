@@ -1,2 +1,2 @@
 # AMosley-StaticSite
-Code for static site hosted on AWS
+Code for static site hosted on *{cloud provider}*
