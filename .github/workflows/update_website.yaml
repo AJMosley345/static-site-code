@@ -23,10 +23,9 @@ jobs:
         ssh-key: ${{ secrets.AM_STATIC_SITE_KEY }}
         fetch-depth: 0
         ref: master
-    - name: Push to Hetzner
+    - name: Push to cloud webserver
       run: |
         git config user.name ajmosley345
         git config user.email ajmosley345@gmail.com
         git remote add prod ssh://amosley@:/var/repos/ajmosley.com.git
         git push prod
-
