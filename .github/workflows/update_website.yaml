@@ -18,7 +18,7 @@ jobs:
         known_hosts: ${{ secrets.AM_STATIC_SITE_KNOWN_HOSTS }}
 
     - name: Checkout the Repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         ssh-key: ${{ secrets.AM_STATIC_SITE_KEY }}
         fetch-depth: 0
@@ -27,5 +27,5 @@ jobs:
       run: |
         git config user.name ajmosley345
         git config user.email ajmosley345@gmail.com
-        git remote add prod ssh://amosley@:/var/repos/ajmosley.com.git
+        git remote add prod ssh://amosley@5.161.65.90:/var/repos/ajmosley.com.git
         git push prod
