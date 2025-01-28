@@ -27,7 +27,7 @@ jobs:
       run: |
         git config user.name ${{ vars.USER_NAME  }}
         git config user.email ${{ vars.EMAIL_ADDRESS }}
-        git remote add live ssh://amosley@5.161.65.90:/var/repos/ajmosley.com.git
+        git remote add live ssh://${{ vars.SSH_USER }}@${{ vars.WEBSERVER_NAME }}:${{ secrets.WEBSITE_REPO }}
         git push live
     
     - name: Do an empty commit and push to new webserver
