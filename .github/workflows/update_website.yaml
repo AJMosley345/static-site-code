@@ -23,6 +23,7 @@ jobs:
     - name: Prepare ssh keys
       uses: shimataro/ssh-key-action@v2
       with:
+          name: id_ed25519
           key: ${{ secrets.AM_STATIC_SITE_KEY }}
           known_hosts: ${{ secrets.AM_STATIC_SITE_KNOWN_HOSTS }}
   
