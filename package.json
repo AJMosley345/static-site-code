@@ -1,8 +1,8 @@
 {
-  "name": "testing-gatsby",
+  "name": "my-project-site",
   "version": "1.0.0",
   "private": true,
-  "description": "testing-gatsby",
+  "description": "my-project-site",
   "author": "ajmosley345",
   "keywords": [
     "gatsby"
@@ -15,16 +15,23 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@wooorm/starry-night": "^3.6.0",
     "gatsby": "^5.14.1",
     "gatsby-plugin-image": "^3.14.0",
     "gatsby-plugin-manifest": "^5.14.0",
     "gatsby-plugin-mdx": "^5.14.0",
+    "gatsby-plugin-node-fields": "^3.1.0",
     "gatsby-plugin-sharp": "^5.14.0",
     "gatsby-plugin-sitemap": "^6.14.0",
+    "gatsby-remark-classes": "^1.0.2",
     "gatsby-source-filesystem": "^5.14.0",
     "gatsby-transformer-remark": "^6.14.0",
     "gatsby-transformer-sharp": "^5.14.0",
+    "github-markdown-css": "^5.8.1",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-markdown": "^9.0.3"
   }
 }

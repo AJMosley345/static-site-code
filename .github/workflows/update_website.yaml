@@ -1,31 +1,41 @@
 name: Hetzner server static-site Push Update
 
 on:
-#   push:
-#     branches:
-#       - main
-    workflow_dispatch:
+  push:
+    branches:
+      - main
+  repository_dispatch:
+    types: [latest-website]
+  workflow_dispatch:
 
 jobs:
-  build:
-    name: Build
+  pull_website_to_server:
+    name: Pull latest version of website
     runs-on: ubuntu-latest
     steps:
-    - name: Prepare ssh keys
-      uses: shimataro/ssh-key-action@v2
+    - name: Connect to Tailscale network to allow access to server
+      uses: tailscale/github-action@v3
       with:
-        key: ${{ secrets.AM_STATIC_SITE_KEY }}
-        known_hosts: ${{ secrets.AM_STATIC_SITE_KNOWN_HOSTS }}
+        oauth-client-id: ${{ secrets.TAILSCALE_OAUTH_CLIENT_ID }}
+        oauth-secret: ${{ secrets.TAILSCALE_OAUTH_SECRET }}
+        tags: ${{ secrets.TAILSCALE_DEVICE_TAG }}
 
     - name: Checkout the Repo
       uses: actions/checkout@v4
-      with:
-        ssh-key: ${{ secrets.AM_STATIC_SITE_KEY }}
-        fetch-depth: 0
-        ref: master
-    - name: Push to cloud webserver
+
+    - name: Push to live site
+      if: github.event_name == 'push' && github.event.branch == 'main'
       run: |
-        git config user.name ajmosley345
-        git config user.email ajmosley345@gmail.com
-        git remote add prod ssh://amosley@5.161.65.90:/var/repos/ajmosley.com.git
-        git push prod
+        git config user.name ${{ vars.USER_NAME  }}
+        git config user.email ${{ vars.EMAIL_ADDRESS }}
+        git remote add live ssh://amosley@5.161.65.90:/var/repos/ajmosley.com.git
+        git push live
+    
+    - name: Do an empty commit and push to new webserver
+      if: github.event_name == 'repository_dispatch'
+      run: |
+        git config user.name ${{ vars.USER_NAME  }}
+        git config user.email ${{ vars.EMAIL_ADDRESS }}
+        git remote add live ssh://${{ vars.SSH_USER }}@${{ vars.WEBSERVER_NAME }}:${{ secrets.WEBSITE_REPO }}
+        git commit --allow-empty -m "Trigger live website update for first push"
+        git push live

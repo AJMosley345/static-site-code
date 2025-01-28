@@ -63,3 +63,5 @@ package-lock.json
 !starters/*/package-lock.json
 
 .parcel-cache
+
+mdbook/

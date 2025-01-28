@@ -3,27 +3,29 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `testing-gatsby`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `My Project Site`,
+    siteUrl: `https://ajmosley.com`
   },
   plugins: ["gatsby-plugin-image", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
-      "icon": "src/images/icon.png"
+      "icon": `${__dirname}/src/images/icon.png`
     }
-  }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+  }, "gatsby-plugin-mdx", "gatsby-plugin-sharp",  {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
-      "path": "./src/images/"
+      "path": `${__dirname}/src/images/`
     },
     __key: "images"
   }, {
     resolve: 'gatsby-source-filesystem',
     options: {
-      "name": "pages",
-      "path": "./src/pages/"
+      "name": "content",
+      "path": `${__dirname}/src/content`
     },
-    __key: "pages"
-  }]
+    // __key: "pages"
+  },
+  `gatsby-transformer-remark`,"gatsby-transformer-sharp", `gatsby-remark-classes`
+],
 };
