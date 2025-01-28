@@ -18,7 +18,7 @@ jobs:
       with:
         oauth-client-id: ${{ secrets.TAILSCALE_OAUTH_CLIENT_ID }}
         oauth-secret: ${{ secrets.TAILSCALE_OAUTH_SECRET }}
-        tags: ${{ secrets.TAILSCALE_DEVICE_TAG }}\
+        tags: ${{ secrets.TAILSCALE_DEVICE_TAG }}
     
     - name: Prepare ssh keys
       uses: shimataro/ssh-key-action@v2
