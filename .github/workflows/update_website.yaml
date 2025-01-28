@@ -18,23 +18,33 @@ jobs:
       with:
         oauth-client-id: ${{ secrets.TAILSCALE_OAUTH_CLIENT_ID }}
         oauth-secret: ${{ secrets.TAILSCALE_OAUTH_SECRET }}
-        tags: ${{ secrets.TAILSCALE_DEVICE_TAG }}
-
+        tags: ${{ secrets.TAILSCALE_DEVICE_TAG }}\
+    
+    - name: Prepare ssh keys
+      uses: shimataro/ssh-key-action@v2
+      with:
+          key: ${{ secrets.AM_STATIC_SITE_KEY }}
+          known_hosts: ${{ secrets.AM_STATIC_SITE_KNOWN_HOSTS }}
+  
     - name: Checkout the Repo
       uses: actions/checkout@v4
-
+      with:
+        ssh-key: ${{ secrets.AM_STATIC_SITE_KEY }}
+        fetch-depth: 0
+        ref: main
+  
     - name: Push to live site
       run: |
         git config user.name ${{ vars.USER_NAME  }}
         git config user.email ${{ vars.EMAIL_ADDRESS }}
-        git remote add live ssh://${{ vars.SSH_USER }}@${{ vars.WEBSERVER_NAME }}:${{ secrets.WEBSITE_REPO }}
-        git push live
+        git remote add live ssh://${{ vars.SSH_USER }}@${{ vars.WEBSERVER_NAME }}:/var/repos/ajmosley.com.git
+        git push live +main:refs/heads/master
     
     - name: Do an empty commit and push to new webserver
       if: github.event_name == 'repository_dispatch'
       run: |
         git config user.name ${{ vars.USER_NAME  }}
         git config user.email ${{ vars.EMAIL_ADDRESS }}
-        git remote add live ssh://${{ vars.SSH_USER }}@${{ vars.WEBSERVER_NAME }}:${{ secrets.WEBSITE_REPO }}
+        git remote add live ssh://${{ vars.SSH_USER }}@${{ vars.WEBSERVER_NAME }}:/var/repos/ajmosley.com.git
         git commit --allow-empty -m "Trigger live website update for first push"
-        git push live
+        git push live +main:refs/heads/master
