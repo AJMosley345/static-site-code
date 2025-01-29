@@ -1,9 +1,11 @@
-import React from "react"
-import "./layout.css"
+import React from "react";
+import "./components.css";
+import "../pages/css/github-markdown.css";
+
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="markdown-body">
       <main>{children}</main>
     </div>
   )

@@ -1,4 +1,4 @@
-name: Hetzner server static-site Push Update
+name: Push latest update to site
 
 on:
   push:

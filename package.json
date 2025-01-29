@@ -28,10 +28,19 @@
     "gatsby-transformer-remark": "^6.14.0",
     "gatsby-transformer-sharp": "^5.14.0",
     "github-markdown-css": "^5.8.1",
+    "hast-util-to-html": "^9.0.4",
+    "micromark": "^4.0.1",
+    "micromark-extension-gfm": "^3.0.0",
+    "micromark-util-decode-numeric-character-reference": "^2.0.2",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
+    "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-markdown": "^9.0.3"
-  }
+    "react-markdown": "^9.0.3",
+    "react-syntax-highlighter": "^15.6.1",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.0"
+  },
+  "packageManager": "yarn@4.6.0"
 }

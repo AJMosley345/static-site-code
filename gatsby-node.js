@@ -52,7 +52,7 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     actions.setWebpackConfig({
       resolve: {
         fallback: {
-          path: require.resolve("path-browserify"), // Polyfill for 'path' module
+          path: require.resolve("path-browserify"),
         },
       },
     });

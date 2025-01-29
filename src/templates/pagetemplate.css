@@ -1,0 +1,8 @@
+.markdown-body a {
+    text-decoration: none;
+    color: #0366d6; /* Customize the link color */
+  }
+  
+.markdown-body a:hover {
+  text-decoration: underline; /* Optional hover effect */
+}

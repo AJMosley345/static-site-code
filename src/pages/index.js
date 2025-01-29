@@ -3,7 +3,6 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 const path = require("path");
 
-
 const IndexPage = ({ data }) => {
   const pages = data.allMarkdownRemark.edges;
   
@@ -54,23 +53,6 @@ const IndexPage = ({ data }) => {
         ))}
       </div>
     </Layout>
-    // <Layout>
-    //   <div className="markdown-body">
-    //     <main>
-    //       <h1>Welcome to My Site</h1>
-    //       <p>Browse the pages:</p>
-    //       <ul>
-    //         {pages.map(({ node }) => (
-    //           <li key={node.id}>
-    //             <Link to={node.frontmatter.slug}>
-    //               {node.frontmatter.title}
-    //             </Link>
-    //           </li>
-    //         ))}
-    //       </ul>
-    //     </main>
-    //   </div>
-    // </Layout>
   );
 };
 
