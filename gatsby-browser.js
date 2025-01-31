@@ -1,7 +1,7 @@
-import "./src/styles/global.css"
-import React from "react"
-import Layout from "./src/components/Layout";
+import React from "react";
+import PagesWrapper from "./src/components/PagesWrapper";
+import "./src/styles/global.css";
 
-export const wrapRootElement = ({ element }) => {
-    return <Layout>{element}</Layout>;
+export const wrapPageElement = ({ element }) => {
+  return <PagesWrapper element={element} />;
 };

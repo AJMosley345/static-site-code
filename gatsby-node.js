@@ -56,4 +56,4 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         },
       },
     });
-  };
+};
