@@ -1,11 +1,17 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+const adapter = require("gatsby-adapter-netlify").default
+
 module.exports = {
   siteMetadata: {
     title: `My Project Site`,
     siteUrl: `https://ajmosley.com`
   },
+  adapter: adapter({
+    excludeDatastoreFromEngineFunction: false,
+    imageCDN: false,
+  }),
   plugins: ["gatsby-plugin-image", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
