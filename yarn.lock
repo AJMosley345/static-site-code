@@ -12720,6 +12720,7 @@ __metadata:
     micromark: "npm:^4.0.1"
     micromark-extension-gfm: "npm:^3.0.0"
     micromark-util-decode-numeric-character-reference: "npm:^2.0.2"
+    node-addon-api: "npm:^8.3.0"
     os-browserify: "npm:^0.3.0"
     path-browserify: "npm:^1.0.1"
     prismjs: "npm:^1.29.0"
@@ -12860,6 +12861,15 @@ __metadata:
   dependencies:
     node-gyp: "npm:latest"
   checksum: 10c0/fb32a206276d608037fa1bcd7e9921e177fe992fc610d098aa3128baca3c0050fc1e014fa007e9b3874cf865ddb4f5bd9f43ccb7cbbbe4efaff6a83e920b17e9
+  languageName: node
+  linkType: hard
+
+"node-addon-api@npm:^8.3.0":
+  version: 8.3.0
+  resolution: "node-addon-api@npm:8.3.0"
+  dependencies:
+    node-gyp: "npm:latest"
+  checksum: 10c0/0ed4206cb68921b33fc637c6f7ffcb91fcde85aea88ea60fadb7b0537bf177226a5600584eac9db2aff93600041d42796fb20576b3299b9be6ff7539592b2180
   languageName: node
   linkType: hard
 

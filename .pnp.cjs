@@ -48,6 +48,7 @@ const RAW_RUNTIME_STATE =
           ["micromark", "npm:4.0.1"],\
           ["micromark-extension-gfm", "npm:3.0.0"],\
           ["micromark-util-decode-numeric-character-reference", "npm:2.0.2"],\
+          ["node-addon-api", "npm:8.3.0"],\
           ["os-browserify", "npm:0.3.0"],\
           ["path-browserify", "npm:1.0.1"],\
           ["prismjs", "npm:1.29.0"],\
@@ -16283,6 +16284,7 @@ const RAW_RUNTIME_STATE =
           ["micromark", "npm:4.0.1"],\
           ["micromark-extension-gfm", "npm:3.0.0"],\
           ["micromark-util-decode-numeric-character-reference", "npm:2.0.2"],\
+          ["node-addon-api", "npm:8.3.0"],\
           ["os-browserify", "npm:0.3.0"],\
           ["path-browserify", "npm:1.0.1"],\
           ["prismjs", "npm:1.29.0"],\
@@ -16436,6 +16438,14 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/unplugged/node-addon-api-npm-7.1.1-bfb302df19/node_modules/node-addon-api/",\
         "packageDependencies": [\
           ["node-addon-api", "npm:7.1.1"],\
+          ["node-gyp", "npm:11.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:8.3.0", {\
+        "packageLocation": "./.yarn/unplugged/node-addon-api-npm-8.3.0-d1fcc10c02/node_modules/node-addon-api/",\
+        "packageDependencies": [\
+          ["node-addon-api", "npm:8.3.0"],\
           ["node-gyp", "npm:11.0.0"]\
         ],\
         "linkType": "HARD"\

@@ -36,6 +36,7 @@
     "micromark": "^4.0.1",
     "micromark-extension-gfm": "^3.0.0",
     "micromark-util-decode-numeric-character-reference": "^2.0.2",
+    "node-addon-api": "^8.3.0",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
     "prismjs": "^1.29.0",
