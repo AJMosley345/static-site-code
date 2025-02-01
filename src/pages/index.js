@@ -1,9 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
-import "./css/github-markdown.css"
 
 const path = require("path");
 const IndexPage = ({ data }) => {
@@ -27,8 +25,10 @@ const IndexPage = ({ data }) => {
   return (
     <>
     <Layout pages={groupedPages}>
-      <Typography variant="h1">Welcome to my website!</Typography>
-      <Typography variant="p">Select a page from the sidebar.</Typography>
+      <div className="markdown-body">
+        <Typography variant="h1">Welcome to my website!</Typography>
+        <Typography variant="p">Select a page from the sidebar.</Typography>
+      </div>
     </Layout>
     </>
   );

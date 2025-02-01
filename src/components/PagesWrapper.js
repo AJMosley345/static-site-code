@@ -34,7 +34,7 @@ const PagesWrapper = ({ element }) => {
 
   return (
     <Layout pages={groupedPages}>
-        <div className="markdown-body" style={{
+        <div style={{
             backgroundColor: "#0d1117",
             margin: 0,
             padding: 0
