@@ -19,18 +19,10 @@ jobs:
         oauth-client-id: ${{ secrets.TAILSCALE_OAUTH_CLIENT_ID }}
         oauth-secret: ${{ secrets.TAILSCALE_OAUTH_SECRET }}
         tags: ${{ secrets.TAILSCALE_DEVICE_TAG }}
-    
-    - name: Prepare ssh keys
-      uses: shimataro/ssh-key-action@v2
-      with:
-          name: id_ed25519
-          key: ${{ secrets.AM_STATIC_SITE_KEY }}
-          known_hosts: ${{ secrets.AM_STATIC_SITE_KNOWN_HOSTS }}
   
     - name: Checkout the Repo
       uses: actions/checkout@v4
       with:
-        ssh-key: ${{ secrets.AM_STATIC_SITE_KEY }}
         fetch-depth: 0
         ref: main
   
