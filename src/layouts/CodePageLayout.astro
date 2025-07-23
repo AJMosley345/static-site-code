@@ -1,0 +1,38 @@
+---
+import '@fontsource-variable/roboto'
+---
+<!doctype html>
+<html lang="en">
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+    *,
+    *::before,
+    *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+	html,
+	body {
+		font-family: 'Roboto Variable', sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #0d1117; /* Set global background color */
+        color: #c9d1d9; /* Optional: set text color to make it readable */
+	}
+
+	h1 {
+		font-family: 'Roboto Variable', sans-serif;
+        margin: .67em 0;
+        font-weight: var(--base-text-weight-semibold, 600);
+        padding-bottom: .3em;
+        font-size: 2em;
+        border-bottom: 1px solid var(--borderColor-muted);
+	}
+</style>
